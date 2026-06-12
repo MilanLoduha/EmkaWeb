@@ -69,14 +69,14 @@ export const PremiumGallery = () => {
           Náš <span className="text-kawaii-pink italic">magický</span> svet
         </motion.h2>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {images.map((image, index) => (
             <motion.div
               key={image.id}
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: index * 0.05 }}
-              className="relative aspect-[4/5] rounded-kawaii overflow-hidden border-2 border-white shadow-lg bg-white"
+              className="relative aspect-square max-w-sm mx-auto w-full rounded-kawaii overflow-hidden border-2 border-white shadow-lg bg-white"
             >
               <Image
                 src={image.src}
@@ -87,7 +87,7 @@ export const PremiumGallery = () => {
               <div className="absolute bottom-4 right-4 z-10">
                 <LikeButton />
               </div>
-              <div className="absolute bottom-4 left-4 z-10 bg-black/60 backdrop-blur-sm px-4 py-1 rounded-full text-sm font-semibold text-white">
+              <div className="absolute bottom-4 left-4 z-10 bg-white/80 backdrop-blur-sm px-4 py-1 rounded-full text-sm font-semibold text-accent-black border border-kawaii-pink">
                 Emka #{image.id}
               </div>
             </motion.div>
