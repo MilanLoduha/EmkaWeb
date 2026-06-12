@@ -64,34 +64,40 @@ export const PremiumGallery = () => {
 
       <div className="max-w-7xl mx-auto">
         <motion.h2 
-          className="text-5xl font-bold text-center mb-20 text-accent-black tracking-tight"
+          className="text-5xl md:text-6xl font-bold text-center mb-20 text-accent-black tracking-tight"
         >
           Náš <span className="text-kawaii-pink italic">magický</span> svet
         </motion.h2>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {images.map((image, index) => (
-            <motion.div
-              key={image.id}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: index * 0.05 }}
-              className="relative aspect-square max-w-sm mx-auto w-full rounded-kawaii overflow-hidden border-2 border-white shadow-lg bg-white"
-            >
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                className="object-cover"
-              />
-              {/* Like button positioned bottom center */}
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10">
-                <LikeButton />
+            <div key={image.id} className="flex flex-col items-center">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: index * 0.05 }}
+                className="relative aspect-square w-full max-w-sm rounded-kawaii overflow-hidden border-4 border-white shadow-xl bg-white"
+              >
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  className="object-cover"
+                />
+                {/* Like button positioned bottom center */}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10">
+                  <LikeButton />
+                </div>
+              </motion.div>
+              {/* Caption area */}
+              <div className="mt-4 w-full max-w-sm">
+                <input 
+                  type="text"
+                  placeholder="Sem napíš popis fotky..."
+                  className="w-full px-4 py-3 rounded-2xl border-2 border-kawaii-pink/30 bg-white text-accent-black text-lg font-medium placeholder:text-gray-400 focus:outline-none focus:border-kawaii-pink transition-colors"
+                />
               </div>
-              <div className="absolute top-4 left-4 z-10 bg-white/80 backdrop-blur-sm px-4 py-1 rounded-full text-sm font-semibold text-accent-black border border-kawaii-pink">
-                Emka #{image.id}
-              </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
