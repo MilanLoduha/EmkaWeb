@@ -25,9 +25,9 @@ const ParticleEffect = () => (
         }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.6 }}
-        className="absolute z-20 text-kawaii-pink"
+        className="absolute z-20 text-red-500"
       >
-        <Heart size={16} fill="currentColor" />
+        <Heart size={20} fill="currentColor" />
       </motion.div>
     ))}
   </AnimatePresence>
@@ -44,11 +44,11 @@ const LikeButton = () => {
   };
 
   return (
-    <button onClick={handleClick} className="relative p-2 bg-white/80 rounded-full shadow-md hover:bg-white transition-colors">
+    <button onClick={handleClick} className="relative p-3 bg-white/90 rounded-full shadow-lg hover:bg-white transition-all hover:scale-110">
       {showParticles && <ParticleEffect />}
       <Heart 
-        size={20} 
-        className={liked ? "fill-kawaii-pink text-kawaii-pink" : "text-kawaii-pink"} 
+        size={28} 
+        className={liked ? "fill-red-500 text-red-500" : "text-red-500"} 
       />
     </button>
   );
@@ -84,10 +84,11 @@ export const PremiumGallery = () => {
                 fill
                 className="object-cover"
               />
-              <div className="absolute bottom-4 right-4 z-10">
+              {/* Like button positioned bottom center */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10">
                 <LikeButton />
               </div>
-              <div className="absolute bottom-4 left-4 z-10 bg-white/80 backdrop-blur-sm px-4 py-1 rounded-full text-sm font-semibold text-accent-black border border-kawaii-pink">
+              <div className="absolute top-4 left-4 z-10 bg-white/80 backdrop-blur-sm px-4 py-1 rounded-full text-sm font-semibold text-accent-black border border-kawaii-pink">
                 Emka #{image.id}
               </div>
             </motion.div>
