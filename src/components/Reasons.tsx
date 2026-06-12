@@ -16,10 +16,10 @@ export const Reasons = () => {
   return (
     <section className="py-20 bg-white px-4 relative overflow-hidden">
       <div className="max-w-4xl mx-auto relative z-10">
-        <h2 className="text-4xl font-bold text-center mb-12 text-accent-black">
-          Prečo ťa <span className="text-primary-pink">tak veľmi</span> milujem
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-accent-black">
+          Prečo ťa <span className="text-kawaii-pink">tak veľmi</span> milujem
         </h2>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {reasons.map((reason, index) => (
             <motion.div
@@ -27,14 +27,15 @@ export const Reasons = () => {
               initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="p-6 rounded-kitty bg-soft-pink/20 border-2 border-primary-pink/30 flex items-center space-x-4 shadow-sm"
+              className="p-6 rounded-kawaii bg-kawaii-cream/40 border-2 border-kawaii-pink/30 flex items-center space-x-4 shadow-sm"
             >
-              <Heart className="text-primary-pink fill-primary-pink w-6 h-6 shrink-0" />
-              <p className="text-lg text-gray-800 font-medium">{reason}</p>
+              <Heart className="text-red-500 fill-red-500 w-6 h-6 shrink-0" />
+              <p className="text-lg text-accent-black font-semibold">{reason}</p>
             </motion.div>
           ))}
         </div>
       </div>
+//...
 
       {/* Decorative icons */}
       <motion.div 
