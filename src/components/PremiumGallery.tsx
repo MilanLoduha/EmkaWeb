@@ -5,13 +5,30 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { Heart } from "lucide-react";
 
-// 1. DYNAMIC DATA: Tu si nastavuj texty pre každú fotku
-const images = Array.from({ length: 21 }, (_, i) => ({
-  id: i + 1,
-  src: `/images/${i + 1}.jpg`,
-  alt: `Emka Moment ${i + 1}`,
-  caption: `Tvoja fotka č. ${i + 1} - Sem napíš popis pre túto konkrétnu fotku.`,
-}));
+// Tu si priamo upravuj popisky pre každú fotku:
+const images = [
+  { id: 1, src: "/images/1.jpg", caption: "Sem napíš popis prvej fotky" },
+  { id: 2, src: "/images/2.jpg", caption: "Sem napíš popis druhej fotky" },
+  { id: 3, src: "/images/3.jpg", caption: "Sem napíš popis tretej fotky" },
+  { id: 4, src: "/images/4.jpg", caption: "Sem napíš popis štvrtej fotky" },
+  { id: 5, src: "/images/5.jpg", caption: "Sem napíš popis piatej fotky" },
+  { id: 6, src: "/images/6.jpg", caption: "Sem napíš popis šiestej fotky" },
+  { id: 7, src: "/images/7.jpg", caption: "Sem napíš popis siedmej fotky" },
+  { id: 8, src: "/images/8.jpg", caption: "Sem napíš popis ôsmej fotky" },
+  { id: 9, src: "/images/9.jpg", caption: "Sem napíš popis deviatej fotky" },
+  { id: 10, src: "/images/10.jpg", caption: "Sem napíš popis desiatej fotky" },
+  { id: 11, src: "/images/11.jpg", caption: "Sem napíš popis jedenástej fotky" },
+  { id: 12, src: "/images/12.jpg", caption: "Sem napíš popis dvanástej fotky" },
+  { id: 13, src: "/images/13.jpg", caption: "Sem napíš popis trinástej fotky" },
+  { id: 14, src: "/images/14.jpg", caption: "Sem napíš popis štrnástej fotky" },
+  { id: 15, src: "/images/15.jpg", caption: "Sem napíš popis pätnástej fotky" },
+  { id: 16, src: "/images/16.jpg", caption: "Sem napíš popis šestnástej fotky" },
+  { id: 17, src: "/images/17.jpg", caption: "Sem napíš popis sedemnástej fotky" },
+  { id: 18, src: "/images/18.jpg", caption: "Sem napíš popis osemnástej fotky" },
+  { id: 19, src: "/images/19.jpg", caption: "Sem napíš popis devätnástej fotky" },
+  { id: 20, src: "/images/20.jpg", caption: "Sem napíš popis dvadsiatej fotky" },
+  { id: 21, src: "/images/21.jpg", caption: "Sem napíš popis dvadsiatej prvej fotky" },
+];
 
 const ParticleEffect = () => (
   <AnimatePresence>
@@ -58,20 +75,16 @@ const LikeButton = () => {
 export const PremiumGallery = () => {
   return (
     <section className="py-24 px-4 relative overflow-hidden">
-      {/* Decorative Hello Kitty elements */}
       <motion.div className="absolute top-10 left-10 opacity-30" animate={{ rotate: 360 }} transition={{ duration: 20, repeat: Infinity, ease: "linear" }}>
         <svg viewBox="0 0 100 100" className="w-24 h-24"><circle cx="50" cy="50" r="40" fill="#FFC0CB"/><path d="M30 40 Q 20 20 40 30 Q 50 25 60 30 Q 80 20 70 40" fill="#FFC0CB"/></svg>
       </motion.div>
 
       <div className="max-w-7xl mx-auto">
-        <motion.h2 
-          className="text-5xl md:text-6xl font-bold text-center mb-20 text-accent-black tracking-tight"
-        >
+        <motion.h2 className="text-5xl md:text-6xl font-bold text-center mb-20 text-accent-black tracking-tight">
           Náš <span className="text-kawaii-pink italic">magický</span> svet
         </motion.h2>
         
-        {/* Force grid layout: 1 col mobile, 2 col tablet, 3 col desktop */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20 max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-24 max-w-7xl mx-auto px-6">
           {images.map((image, index) => (
             <div key={image.id} className="flex flex-col items-center pt-12">
               <motion.div
@@ -80,19 +93,12 @@ export const PremiumGallery = () => {
                 transition={{ delay: index * 0.05 }}
                 className="relative aspect-square w-full max-w-[320px] rounded-kawaii overflow-hidden border-4 border-white shadow-xl bg-white"
               >
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  className="object-cover"
-                />
-                {/* Like button positioned bottom center */}
+                <Image src={image.src} alt={image.alt} fill className="object-cover" />
                 <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20">
                   <LikeButton />
                 </div>
               </motion.div>
               
-              {/* Caption placeholder frame - dynamic text */}
               <div className="mt-8 w-full max-w-[320px] p-5 rounded-2xl border-2 border-kawaii-pink/40 bg-white/50 text-accent-black text-center min-h-[5rem]">
                 <p className="text-accent-black font-semibold text-lg">{image.caption}</p>
               </div>
