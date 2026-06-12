@@ -70,7 +70,7 @@ export const Hero = () => {
           Emka, <span className="text-kawaii-pink italic">milujem ťa</span>
         </h1>
         
-        <p className="text-lg md:text-xl text-accent-black/90 max-w-xl mx-auto font-medium">
+        <p className="text-lg md:text-xl text-accent-black max-w-xl mx-auto font-medium">
           Si to najlepšie, čo ma kedy stretlo. Každý deň s tebou je ako sen.
         </p>
 

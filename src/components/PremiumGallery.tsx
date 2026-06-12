@@ -69,14 +69,14 @@ export const PremiumGallery = () => {
           Náš <span className="text-kawaii-pink italic">magický</span> svet
         </motion.h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {images.map((image, index) => (
             <div key={image.id} className="flex flex-col items-center">
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.05 }}
-                className="relative aspect-square w-full max-w-sm rounded-kawaii overflow-hidden border-4 border-white shadow-xl bg-white"
+                className="relative aspect-square w-full max-w-[250px] rounded-kawaii overflow-hidden border-4 border-white shadow-lg bg-white"
               >
                 <Image
                   src={image.src}
