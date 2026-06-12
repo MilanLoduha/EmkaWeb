@@ -69,14 +69,14 @@ export const PremiumGallery = () => {
           Náš <span className="text-kawaii-pink italic">magický</span> svet
         </motion.h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20 max-w-7xl mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-24 max-w-7xl mx-auto px-6">
           {images.map((image, index) => (
-            <div key={image.id} className="flex flex-col items-center pt-8">
+            <div key={image.id} className="flex flex-col items-center pt-12">
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.05 }}
-                className="relative aspect-square w-full max-w-[300px] rounded-kawaii overflow-hidden border-4 border-white shadow-xl bg-white"
+                className="relative aspect-square w-full max-w-[320px] rounded-kawaii overflow-hidden border-4 border-white shadow-xl bg-white"
               >
                 <Image
                   src={image.src}
@@ -84,15 +84,15 @@ export const PremiumGallery = () => {
                   fill
                   className="object-cover"
                 />
-                {/* Like button positioned bottom center - explicitly bottom-4 */}
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20">
+                {/* Like button positioned bottom center - explicitly bottom-6 */}
+                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20">
                   <LikeButton />
                 </div>
               </motion.div>
               
               {/* Caption placeholder frame */}
-              <div className="mt-6 w-full max-w-[280px] p-4 rounded-2xl border-2 border-kawaii-pink/40 bg-white/50 text-accent-black text-center min-h-[4rem]">
-                <p className="text-accent-black font-medium">Sem napíš popis...</p>
+              <div className="mt-8 w-full max-w-[320px] p-5 rounded-2xl border-2 border-kawaii-pink/40 bg-white/50 text-accent-black text-center min-h-[5rem]">
+                <p className="text-accent-black font-semibold text-lg">Sem napíš popis...</p>
               </div>
             </div>
           ))}
