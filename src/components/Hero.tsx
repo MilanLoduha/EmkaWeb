@@ -71,7 +71,7 @@ export const Hero = () => {
         </h1>
         
         <p className="text-lg md:text-xl text-accent-black max-w-xl mx-auto font-medium">
-          Si to najlepšie, čo ma kedy stretlo. Každý deň s tebou je ako sen.
+          Si to najlepšie, čo ma kedy stretlo. Každý deň ťa milujem viac, a viac.
         </p>
 
         <motion.div 

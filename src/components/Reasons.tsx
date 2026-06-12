@@ -5,11 +5,11 @@ import { Star, Heart, Cloud } from "lucide-react";
 
 const reasons = [
   "Máš ten najkrajší úsmev na svete.",
-  "Vždy vieš, ako ma rozosmiať.",
+  "Vždy vieš, ako ma rozosmiať a vieš ma pochopiť.",
   "Si neuveriteľne láskavá a šikovná.",
   "Tvoje objatia sú to najbezpečnejšie miesto.",
-  "Milujem tvoju energiu a radosť zo života.",
-  "Si proste moja úžasná Emka."
+  "Milujem tvoju divnosť a to aká proste si.",
+  "Si proste moja úžasná jediná Emka."
 ];
 
 export const Reasons = () => {
