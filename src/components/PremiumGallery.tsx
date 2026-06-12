@@ -69,7 +69,7 @@ export const PremiumGallery = () => {
           Náš <span className="text-kawaii-pink italic">magický</span> svet
         </motion.h2>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 max-w-6xl mx-auto">
           {images.map((image, index) => (
             <div key={image.id} className="flex flex-col items-center pt-8">
               <motion.div
@@ -84,13 +84,13 @@ export const PremiumGallery = () => {
                   fill
                   className="object-cover"
                 />
-                {/* Like button */}
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10">
+                {/* Like button positioned bottom center - explicitly bottom-4 */}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20">
                   <LikeButton />
                 </div>
               </motion.div>
               
-              {/* Caption placeholder frame - black text */}
+              {/* Caption placeholder frame */}
               <div className="mt-6 w-full max-w-[280px] p-4 rounded-2xl border-2 border-kawaii-pink/40 bg-white/50 text-accent-black text-center min-h-[4rem]">
                 <p className="text-accent-black font-medium">Sem napíš popis...</p>
               </div>
