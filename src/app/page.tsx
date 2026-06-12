@@ -14,8 +14,8 @@ export default function Home() {
         <div className="flex justify-center mb-6">
           <Bow className="w-20 h-12" />
         </div>
-        <p className="text-2xl font-bold">Navždy tvoj ❤️</p>
-        <p className="text-md text-gray-400 mt-2">Vytvorené s láskou pre Emku</p>
+        <p className="text-2xl font-bold">Navždy tvoj Miňčo Miňušo❤️</p>
+        <p className="text-md text-gray-400 mt-2">Vytvorené s láskou pre Emičku pšíčku</p>
       </footer>
     </main>
   );

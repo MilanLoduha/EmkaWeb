@@ -5,11 +5,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { Heart } from "lucide-react";
 
-// Create 21 placeholders
+// 1. DYNAMIC DATA: Tu si nastavuj texty pre každú fotku
 const images = Array.from({ length: 21 }, (_, i) => ({
   id: i + 1,
   src: `/images/${i + 1}.jpg`,
   alt: `Emka Moment ${i + 1}`,
+  caption: `Tvoja fotka č. ${i + 1} - Sem napíš popis pre túto konkrétnu fotku.`,
 }));
 
 const ParticleEffect = () => (
@@ -69,7 +70,8 @@ export const PremiumGallery = () => {
           Náš <span className="text-kawaii-pink italic">magický</span> svet
         </motion.h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-24 max-w-7xl mx-auto px-6">
+        {/* Force grid layout: 1 col mobile, 2 col tablet, 3 col desktop */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20 max-w-7xl mx-auto px-6">
           {images.map((image, index) => (
             <div key={image.id} className="flex flex-col items-center pt-12">
               <motion.div
@@ -84,15 +86,15 @@ export const PremiumGallery = () => {
                   fill
                   className="object-cover"
                 />
-                {/* Like button positioned bottom center - explicitly bottom-6 */}
+                {/* Like button positioned bottom center */}
                 <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20">
                   <LikeButton />
                 </div>
               </motion.div>
               
-              {/* Caption placeholder frame */}
+              {/* Caption placeholder frame - dynamic text */}
               <div className="mt-8 w-full max-w-[320px] p-5 rounded-2xl border-2 border-kawaii-pink/40 bg-white/50 text-accent-black text-center min-h-[5rem]">
-                <p className="text-accent-black font-semibold text-lg">Sem napíš popis...</p>
+                <p className="text-accent-black font-semibold text-lg">{image.caption}</p>
               </div>
             </div>
           ))}
