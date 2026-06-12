@@ -6,7 +6,7 @@ import Image from "next/image";
 // Create 21 placeholders
 const images = Array.from({ length: 21 }, (_, i) => ({
   id: i + 1,
-  src: `/images/placeholder-${i + 1}.jpg`,
+  src: `/images/${i + 1}.jpg`,
   alt: `Emka Moment ${i + 1}`,
 }));
 
