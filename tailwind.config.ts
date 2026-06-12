@@ -9,22 +9,27 @@ export default {
   theme: {
     extend: {
       colors: {
-        'primary-pink': '#FF69B4',
-        'soft-pink': '#FFC0CB',
+        'kawaii-pink': '#FFC0CB',
+        'kawaii-blue': '#B0E0E6',
+        'kawaii-lavender': '#E6E6FA',
+        'kawaii-cream': '#FFFDD0',
+        'kawaii-gold': '#FFD700',
         'accent-black': '#1A1A1A',
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: "#FFF5F7",
+        foreground: "#4A4A4A",
       },
       borderRadius: {
-        'kitty': '2rem',
+        'xl': '1rem',
+        '2xl': '2rem',
+        'kawaii': '2.5rem',
       },
       animation: {
-        'float': 'float 3s ease-in-out infinite',
+        'float': 'float 4s ease-in-out infinite',
       },
       keyframes: {
         float: {
           '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-10px)' },
+          '50%': { transform: 'translateY(-15px)' },
         }
       }
     },
